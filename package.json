@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "pre-commit": "yarn lint",
-    "lint": "eslint ./ --ext js,jsx,ts,tsx",
+    "lint": "eslint ./ --ext js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
