@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect, useMemo } from 'react'
+import React, { createContext, useState, useEffect, useMemo } from 'react'
+import PropTypes from 'prop-types'
 //
 const AppContext = createContext()
 
@@ -32,7 +33,7 @@ const AppProvider = (props) => {
           setWallet(accounts[0])
         }
         window.ethereum.on('accountsChanged', (accounts) => {
-          console.log('Navigation accountsChanged', accounts)
+          // console.log('Navigation accountsChanged', accounts)
           if (accounts.length > 0) {
             setWallet(accounts[0])
           } else {
@@ -42,7 +43,7 @@ const AppProvider = (props) => {
       }
     } else if (window.ethereum) {
       window.ethereum.on('accountsChanged', (accounts) => {
-        console.log('Navigation accountsChanged', accounts)
+        // console.log('Navigation accountsChanged', accounts)
         if (accounts.length > 0) {
           setWallet(accounts[0])
         } else {
@@ -50,14 +51,14 @@ const AppProvider = (props) => {
         }
       })
 
-      window.ethereum.on('connect', (chainId) => {
+      window.ethereum.on('connect', () => {
         let account = window.ethereum.selectedAddress
         setWallet(account)
       })
 
       if (window.ethereum.isConnected()) {
         let account = window.ethereum.selectedAddress
-        console.log('account', account)
+        // console.log('account', account)
         setWallet(account)
       }
     }
@@ -72,4 +73,9 @@ const AppProvider = (props) => {
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
   )
 }
+
+AppProvider.propTypes = {
+  children: PropTypes.node,
+}
+
 export { AppContext, AppProvider }

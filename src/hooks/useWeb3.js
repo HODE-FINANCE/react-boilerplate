@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react'
+import PropTypes from 'prop-types'
 import Web3 from 'web3'
 //
 const Web3Context = React.createContext(undefined)
@@ -82,6 +83,10 @@ export function Web3Provider({ children }) {
   }, [initWeb3])
 
   return <Web3Context.Provider value={state}>{children}</Web3Context.Provider>
+}
+
+Web3Provider.propTypes = {
+  children: PropTypes.node,
 }
 
 export default function useWeb3() {

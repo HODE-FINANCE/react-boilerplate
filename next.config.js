@@ -1,5 +1,6 @@
+/* eslint-disable */
 require('dotenv').config()
-//
+/* eslint-disable */
 module.exports = {
   reactStrictMode: true,
   env: {

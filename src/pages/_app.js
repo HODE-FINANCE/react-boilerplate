@@ -1,4 +1,5 @@
-import { useMemo } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
 //
 import { AppProvider } from 'context'
@@ -8,7 +9,6 @@ import { useLocale } from 'config/intl'
 //
 function MyApp({ Component, pageProps }) {
   const { locale, messages } = useLocale()
-
   return (
     <AppProvider>
       <Web3Provider>
@@ -20,6 +20,11 @@ function MyApp({ Component, pageProps }) {
       </Web3Provider>
     </AppProvider>
   )
+}
+
+MyApp.propTypes = {
+  Component: PropTypes.node,
+  pageProps: PropTypes.object,
 }
 //
 export default MyApp
