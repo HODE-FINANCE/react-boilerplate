@@ -1,14 +1,8 @@
-import { useContext, Fragment } from 'react'
-import { Statistic, Row, Col } from 'antd'
+import { useIntl } from 'react-intl'
 //
 function HomePage() {
-  
-
-  return (
-    <div>
-    HOME PAGE
-    </div>
-  )
+  const intl = useIntl()
+  return <div>{intl.formatMessage({ id: 'home.welcome' })}</div>
 }
 
 export default HomePage
