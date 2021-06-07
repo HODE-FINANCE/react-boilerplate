@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "pre-commit": "lint",
+    "pre-commit": "yarn lint",
     "lint": "eslint ./ --ext js,jsx,ts,tsx",
     "dev": "next dev",
     "build": "next build",
@@ -36,7 +36,16 @@
     "eslint": "^7.28.0",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "postcss": "^8.3.0",
     "prettier": "2.3.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js}": "yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
