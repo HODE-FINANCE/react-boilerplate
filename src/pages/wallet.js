@@ -9,7 +9,7 @@ function WalletPage() {
     <Fragment>
       <h1>Wallet</h1>
       {wallet && <div>{wallet}</div>}
-      {wallet && <button onClick={connectWallet}>Connect</button>}
+      {!wallet && <button onClick={connectWallet}>Connect</button>}
     </Fragment>
   )
 }
