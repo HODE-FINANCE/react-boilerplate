@@ -1,0 +1,33 @@
+{
+  "name": "hode-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
+    "@react-icons/all-files": "^4.1.0",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.3.0",
+    "firebase": "^8.6.3",
+    "firebase-functions": "^3.14.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "next": "10.2.2",
+    "react": "17.0.2",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-svg": "^13.0.6",
+    "styled-components": "^5.3.0",
+    "web3": "^1.3.6"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "postcss": "^8.3.0",
+    "prettier": "2.3.0"
+  }
+}
