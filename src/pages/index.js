@@ -7,7 +7,8 @@ import useEther from 'hooks/useEther'
 function HomePage() {
   const intl = useIntl()
   const { ether } = useEther()
-  const handleCallContract = async () => {
+
+  const handleCallContract = async (params) => {
     const contract = new ethers.Contract('CONTRACT_ADDR', 'ABI', ether.provider)
   }
 
